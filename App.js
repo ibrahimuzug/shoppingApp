@@ -1,56 +1,34 @@
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import React, { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
 import SplashScreen from 'react-native-splash-screen'
-import { BottomNavigation, Text } from 'react-native-paper';
-import 'react-native-vector-icons';
 
-const MusicRoute = () => <Text>Music</Text>;
+import HomePage from './src/screens/Home';
+import CartPage from './src/screens/CartPage';
+import LoginPage from './src/screens/Login';
+import OrderReceipt from './src/screens/OrderReceiptPage';
+import OrderPage from './src/screens/OrderPage';
 
-const AlbumsRoute = () => <Text>Albums</Text>;
+const StackRoute = createStackNavigator(
+  {
+    Anasayfa: HomePage,
+    Sepetim: CartPage,
+    Giris: LoginPage,
+    OrderReceiptPage: OrderReceipt,
+    OrderPage: OrderPage
+  },
+  {
+    initialRouteName: 'Anasayfa',
+  }
+);
 
-const RecentsRoute = () => <Text>Recents</Text>;
-
-const App: () => React$Node = () => {
-
+const AppContainer = createAppContainer(StackRoute);
+const App = () => {
   useEffect(() => {
     SplashScreen.hide();
-  }, []);
+  }, [])
 
-  state = {
-    index: 1,
-    routes: [
-      { key: 'music', title: 'Music', icon: 'queue-music' },
-      { key: 'albums', title: 'Albums', icon: 'album' },
-      { key: 'recents', title: 'Recents', icon: 'history' },
-    ],
-  };
+  return <AppContainer />;
+}
 
-  _handleIndexChange = index => this.setState({ index });
-
-  _renderScene = BottomNavigation.SceneMap({
-    music: MusicRoute,
-    albums: AlbumsRoute,
-    recents: RecentsRoute,
-  });
-
-
-  return (
-    <View>
-      <BottomNavigation
-        navigationState={this.state}
-        onIndexChange={this._handleIndexChange}
-        renderScene={this._renderScene}
-      />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-
-  bottom: {
-    bottom: 0,
-  }
-
-});
-
-export default App;
+export default App
