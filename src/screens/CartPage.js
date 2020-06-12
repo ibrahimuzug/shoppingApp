@@ -1,79 +1,18 @@
 import React from 'react';
-import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Content, Container, Footer, FooterTab, Button, Icon, Card, CardItem } from 'native-base';
-
 
 export default class CartPage extends React.Component {
     render() {
         return (
             <Container style={styles.container}>
                 <Content style={styles.content}>
-
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem>
-                            <Text>Bu ilk ürün</Text>
-                        </CardItem>
-                    </Card>
-                
+                    <View style={styles.container}>
+                    </View>
                 </Content>
 
                 <TouchableOpacity style={styles.button}>
-                    <Button
+                    <Button block info
                         onPress={() =>
                             this.props.navigation.navigate('Sipariş')
                         }>
@@ -111,7 +50,6 @@ export default class CartPage extends React.Component {
         );
     }
 }
-
 const styles = StyleSheet.create({
     container: {
     },
@@ -122,7 +60,5 @@ const styles = StyleSheet.create({
         flex: 0.05,
         alignItems: "center",
         padding: 10,
-        borderRadius: 50,
-
     }
 });
