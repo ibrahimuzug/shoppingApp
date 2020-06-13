@@ -16,20 +16,34 @@ const categories =
     { id: 'bags', name: 'Çanta Ve Bavul' }
   ];
 
+const cartItems=[
+  { id: 1, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF", qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 2, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF",qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 1985 },
+  { id: 3, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF",qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 255.15 },
+  { id: 4, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF", qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 59862 },
+  { id: 5, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF", qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 112 },
+  { id: 6, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF", qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 7, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF",qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 1985 },
+  { id: 8, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF",qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 255.15 },
+  { id: 9, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF", qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 59862 },
+  { id: 10, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF", qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 112 },
+
+];
+
 const allProducts = [
-  { id: 1, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 2, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 3, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 4, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 5, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 6, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 7, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 8, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 9, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 10, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 11, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 12, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
-  { id: 13, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 1, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF", qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 2, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF",qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 3, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF",qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 4, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF", qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 5, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: "https://i5.walmartimages.com/asr/a3922e8e-2128-4603-ba8c-b58d1333253b_1.44d66337098c1db8fed9abe2ff4b57ce.jpeg?odnHeight=100&odnWidth=100&odnBg=FFFFFF", qty: 1,description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 6, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: '',description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 7, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: '',description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 8, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: '',description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 9, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: '',description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 10, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: '',description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 11, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: '',description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 12, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: '',description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
+  { id: 13, name: '16 Best Plants That Thrive In Your Bedroom', thumbnailImage: '',description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
   { id: 14, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
   { id: 15, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
   { id: 16, name: '16 Best Plants That Thrive In Your Bedroom', description: ' All Good Stuff Is In Our Stock Come And See', price: 199 },
@@ -244,6 +258,7 @@ export {
   kitchen,
   zuccaciye,
   bags,
-  allProducts
+  allProducts,
+  cartItems
 
 }

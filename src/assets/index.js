@@ -63,8 +63,6 @@ export default class CartPage extends React.Component {
         return 0;
     }
 
-
-
     render() {
 
         const { cartItems, cartItemsIsLoading } = this.state;
@@ -104,7 +102,6 @@ export default class CartPage extends React.Component {
                                 </View>
                             </View>
                         </View>
-
                         <View style={styles.checkOutView}>
                             <TouchableOpacity style={styles.checkoutButton}
                                 onPress={() => this.props.navigation.navigate('Sipariş')}>
