@@ -1,9 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 import { Content, Container, Footer, FooterTab, Button, Icon, Card, CardItem } from 'native-base';
 import { allProducts } from '../common/Data';
-
-
 
 export default class ProductPage extends React.Component {
     constructor(props) {
@@ -12,6 +10,20 @@ export default class ProductPage extends React.Component {
             allProducts,
 
         }
+    }
+
+    quantityHandler = (action, index) => {
+        const newItems = [...this.state.allProducts];
+
+        let currentQty = newItems[index]['qty'];
+
+        if (action == 'more') {
+            newItems[index]['qty'] = currentQty + 1;
+        } else if (action == 'less') {
+            newItems[index]['qty'] = currentQty > 1 ? currentQty - 1 : 1;
+        }
+
+        this.setState({ allProducts: newItems });
     }
 
     render() {
@@ -25,15 +37,26 @@ export default class ProductPage extends React.Component {
                         {allProducts && allProducts.map((pro, i) => (
                             <View key={i} style={styles.mainView}>
                                 <Card style={{ flexDirection: 'column', flexGrow: 1, alignSelf: 'center' }}>
-                                    
-                                    <CardItem button onPress={() => alert("This is Card Header")}>
-                                        <Text>{pro.name}</Text>
-                                    </CardItem>
-                                    <CardItem button onPress={() => alert("This is Card Header")}>
-                                        <Text>{pro.description}</Text>
-                                    </CardItem>
-                                    <CardItem button onPress={() => alert("This is Card Header")}>
-                                        <Text>{pro.price} TL</Text>
+                                    <CardItem>
+                                        <TouchableOpacity>
+                                            <Image
+                                                source={{ uri: allProducts.thumbnailImage }}
+                                                style={styles.image} />
+                                        </TouchableOpacity>
+                                        <View>
+                                            <Text style={styles.productText}>{pro.name} {"\n"} {pro.description}
+                                                {"\n"}{"\n"}{pro.price} TL</Text>
+                                        </View>
+
+                                        <View >
+                                            <TouchableOpacity>
+                                                <Button style={styles.addCartButton}
+                                                    block info
+                                                    onPress={() => alert("Ürününüz Sepete Eklendi")}>
+                                                    <Text>Sepete Ekle</Text>
+                                                </Button>
+                                            </TouchableOpacity>
+                                        </View>
                                     </CardItem>
                                 </Card>
                             </View>
@@ -84,5 +107,33 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         marginBottom: 2,
         height: 120,
+    },
+    image: {
+        height: 70,
+        width: 70,
+        backgroundColor: '#eeeeee',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    productText: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 10
+    },
+    quantityAdd: {
+        borderWidth: 1,
+        borderColor: '#cccccc'
+    },
+    quantityRemove: {
+        borderWidth: 1,
+        borderColor: '#cccccc'
+    },
+    addCartButton: {
+        width: 90,
+        height: 40,
+        borderRadius: 10,
+        marginBottom: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });

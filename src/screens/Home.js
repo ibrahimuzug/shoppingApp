@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, Dimensions, ScrollView, Image } from 'react-native';
 import { Content, Container, Footer, FooterTab, Icon, Button, Card, CardItem, View } from 'native-base';
 import { categories } from '../common/Data';
+
 
 export default class Home extends React.Component {
 
@@ -9,7 +10,6 @@ export default class Home extends React.Component {
         super(props)
         this.state = {
             categories,
-
         }
     }
 
@@ -17,22 +17,32 @@ export default class Home extends React.Component {
 
         const { categories } = this.state;
         return (
-            <Container style={styles.container}>
+            <Container>
                 <Content >
-                    <View style={styles.content}>
-                        {categories && categories.map((cat, i) => (
-                            <View key={i}>
-                                <Card>
-                                    <CardItem header button onPress={() =>
-                                        this.props.navigation.navigate('Ürünler')
-                                    }>
-                                        <Text>{cat.name}</Text>
-                                    </CardItem>
-                                </Card>
-                            </View>
-                        ))}
-
-                    </View>
+                    <ScrollView>
+                        <View style={styles.container}>
+                            {categories && categories.map((cat, i) => {
+                                return (
+                                    <TouchableOpacity
+                                        key={i}
+                                        style={styles.item}
+                                        onPress={() =>
+                                            this.props.navigation.navigate('Ürünler')
+                                        }
+                                    >
+                                        <Image
+                                            style={styles.itemIcon}
+                                            source={{ uri: cat.thumbnailImage }}
+                                        />
+                                        <Text style={styles.itemTitle}>
+                                            {cat.name}
+                                        </Text>
+                                    </TouchableOpacity>
+                                )
+                            })
+                            }
+                        </View>
+                    </ScrollView>
                 </Content>
                 <TouchableOpacity style={styles.button}>
                     <Button block info
@@ -71,8 +81,11 @@ export default class Home extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
+        flexDirection: 'row',
+        flexWrap: 'wrap'
     },
     content: {
+        flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'center',
@@ -83,7 +96,23 @@ const styles = StyleSheet.create({
         flex: 0.05,
         alignItems: "center",
         padding: 10,
-    }
+    },
+    item: {
+        width: Dimensions.get('window').width * 0.3333,
+        height: 200,
+        borderWidth: 1,
+        borderColor: "lightgray",
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    itemIcon: {
+        width: 100,
+        height: 100,
+        resizeMode: 'contain'
+    },
+    itemTitle: {
+        marginTop: 15,
+    },
 
 
 });

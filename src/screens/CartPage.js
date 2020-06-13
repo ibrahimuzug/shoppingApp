@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Button, Text, View, TouchableOpacity, ScrollView, Image, ActivityIndicator, TextInput, Alert } from 'react-native';
-import { Icon } from 'native-base';
-import {cartItems} from '../common/Data';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Image, Alert } from 'react-native';
+import { Icon, Footer, FooterTab, Button } from 'native-base';
+import { cartItems } from '../common/Data';
 
 export default class CartPage extends React.Component {
     constructor(props) {
@@ -76,20 +76,20 @@ export default class CartPage extends React.Component {
                                         <View style={styles.specificationView}>
                                             <Text numberOfLines={2}>{item.name}</Text>
                                             <Text numberOfLines={1}>{item.description}</Text>
-                                            <Text>{item.qty * item.price} TL</Text>
+                                            <Text style={{color:'blue'}}>{item.qty * item.price} TL</Text>
 
                                             <View style={{ flexDirection: 'row' }}>
                                                 <TouchableOpacity
                                                     onPress={() => this.quantityHandler('less', i)}
                                                     style={styles.quantityRemove}>
-                                                    <Icon name="remove" />
+                                                    <Icon name="md-remove" />
                                                 </TouchableOpacity>
 
                                                 <Text style={styles.quantity}>{item.qty}</Text>
                                                 <TouchableOpacity
                                                     onPress={() => this.quantityHandler('more', i)}
                                                     style={styles.quantityAdd}>
-                                                    <Icon name="add" />
+                                                    <Icon name="md-add" />
                                                 </TouchableOpacity>
                                             </View>
                                         </View>
@@ -99,7 +99,7 @@ export default class CartPage extends React.Component {
                                         <TouchableOpacity
                                             onPress={() => this.deleteHandler(i)}
                                             style={styles.deleteButton}>
-                                            <Icon name="md-trash" size={25} color="#ee4d2d" />
+                                            <Icon name="md-trash" size={25} color="#FF0202" />
                                         </TouchableOpacity>
                                     </View>
                                 </View>
@@ -112,8 +112,8 @@ export default class CartPage extends React.Component {
                         <View style={{ flexDirection: 'row' }}>
                             <View style={styles.subTotal}>
                                 <View style={styles.subTotalView}>
-                                    <Text style={{ color: '#8f8f8f' }}>Toplam Tutar: </Text>
-                                    <Text>{this.subtotalPrice().toFixed(2)} TL</Text>
+                                    <Text style={{ color: 'black' }}>Toplam Tutar: </Text>
+                                    <Text style={{ color: 'blue' }}>{this.subtotalPrice().toFixed(2)} TL</Text>
                                 </View>
                             </View>
                         </View>
@@ -128,7 +128,35 @@ export default class CartPage extends React.Component {
                         </View>
                     </View>
                 }
+
+                <Footer>
+                    <FooterTab>
+
+                        <Button vertical active
+                            onPress={() =>
+                                this.props.navigation.navigate('Anasayfa')
+                            }>
+                            <Icon name="home" />
+                        </Button>
+
+                        <Button vertical active
+                            onPress={() =>
+                                this.props.navigation.navigate('Sepetim')
+                            }>
+                            <Icon name="cart" />
+                        </Button>
+
+                        <Button vertical active
+                            onPress={() =>
+                                this.props.navigation.navigate('Giriş')
+                            }>
+                            <Icon name="person" />
+                        </Button>
+
+                    </FooterTab>
+                </Footer>
             </View>
+
         );
     }
 }
@@ -145,8 +173,8 @@ const styles = StyleSheet.create({
         height: 120,
     },
     image: {
-        height: 60,
-        width: 60,
+        height: 100,
+        width: 100,
         backgroundColor: '#eeeeee',
         justifyContent: 'center',
         alignItems: 'center',
@@ -193,19 +221,23 @@ const styles = StyleSheet.create({
     quantity: {
         borderTopWidth: 1,
         borderBottomWidth: 1,
-        borderColor: '#cccccc',
+        borderColor: 'black',
         paddingHorizontal: 7,
         paddingTop: 3,
-        color: '#bbbbbb',
-        fontSize: 13
+        color: 'black',
+        fontSize: 25
     },
     quantityAdd: {
+        width: 50,
+        height: 50,
         borderWidth: 1,
-        borderColor: '#cccccc'
+        borderColor: 'black'
     },
     quantityRemove: {
+        width: 50,
+        height: 50,
         borderWidth: 1,
-        borderColor: '#cccccc'
+        borderColor: 'black'
     },
 
     deleteButtonView: {
